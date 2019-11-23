@@ -1,0 +1,9 @@
+export const SET_PRIVATE_MASSAGES = 'rightView/SET_PRIVATE_MASSAGES'
+export const ADD_PRIVATE_MASSAGES = 'rightView/ADD_PRIVATE_MASSAGES'
+export const SET_NEW_MASSAGES = 'rightView/SET_NEW_MASSAGES'
+export const ADD_PRIVATE_CHAT = 'rightView/ADD_PRIVATE_CHAT'
+export const DELETE_PRIVATE_CHAT = 'rightView/DELETE_PRIVATE_CHAT'
+export const DELETE_PRIVATE_MASSAGES = 'rightView/DELETE_PRIVATE_MASSAGES'
+export const SET_USERID = 'SET_USERID'
+
+

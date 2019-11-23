@@ -1,0 +1,51 @@
+.free-chat {
+  padding: 20px 0;
+  .free-chat-Item {
+    display: flex;
+    margin : 0 auto;
+    width  : 80%;
+    height : 50px;
+
+    .free-chat-avatar {
+      margin-right: 12px;
+      cursor      : pointer;
+
+      .ant-avatar {
+        height: 50px;
+        width : 50px;
+      }
+    }
+
+    .free-Info-content {
+      min-width: 1px;
+      font-size: 14px;
+      word-wrap: break-word;
+      color    : rgba(0, 0, 0, 0.45);
+      flex     : 1;
+
+      .free-Info-content-user {
+        margin-top     : 2px;
+        display        : flex;
+        justify-content: space-between;
+        align-items    : center;
+
+        .free-Info-content-user-time {
+          font-size: 10px;
+        }
+      }
+
+      .free-Info-content-info {
+        text-align: left;
+        font-size : 13px;
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+      }
+    }
+  }
+}
+
+.free-chat:hover {
+  background: #F4F4F4;
+}

@@ -1,0 +1,62 @@
+.input-aera {
+  flex            : 0 1 25%;
+  background-color: #fff;
+  display         : flex;
+  flex-direction  : column;
+
+  .input-aera-header {
+    padding: 12px 0 0 0;
+    flex   : 0 1;
+
+    span {
+      display  : inline;
+      font-size: 19px;
+      margin   : 0 25px;
+    }
+  }
+
+  textarea {
+    flex       : 1;
+    border     : 0;
+    padding    : 8px 25px;
+    caret-color: #6197f9;
+    resize:none; // 去除拖动
+    &:focus {
+      border : 0 rgb(255, 255, 255);
+      outline: 0;
+    }
+  }
+
+  .input-aera-footer {
+    flex   : 0 1 10%;
+    padding: 16px 36px;
+
+    .send-button {
+      float      : right;
+      height     : 36px;
+      width      : 100px;
+      line-height: 36px;
+      text-align : center;
+
+      border-radius: 20px;
+      background   : #6197f9;
+      font-size    : 20px;
+      color        : white;
+      cursor: pointer;
+    }
+
+    /*火狐*/
+    -moz-user-select: none;
+    /*webkit浏览器*/
+    -webkit-user-select: none;
+    /*IE10*/
+    -ms-user-select: none;
+    /*早期浏览器*/
+    -khtml-user-select: none;
+    user-select       : none;
+
+    // 移动端 禁止文字被选中
+    -webkit-touch-callout: none;
+  }
+
+}

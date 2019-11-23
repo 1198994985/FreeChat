@@ -1,0 +1,29 @@
+@size: 22px;
+@clickAnimation:all 0.1s linear;
+.iconfont {
+  display              : block;
+  height               : @size*3;
+  width                : @size;
+  line-height          : @size;
+  font-size            : @size;
+  margin               : 0 auto;
+  padding              : @size 0;
+  color                : #88888a;
+  -webkit-transition   : @clickAnimation;
+  -moz-transition      : @clickAnimation;
+  transition           : @clickAnimation;
+
+  &:active {
+    font-size: @size - 4px;
+  }
+}
+
+.iconfont:hover {
+  color : rgba(94, 150, 252, 0.7) !important;
+  cursor: pointer;
+}
+
+.selected {
+  color     : rgb(94, 150, 252) !important;
+  background: #FBFBFB;
+}

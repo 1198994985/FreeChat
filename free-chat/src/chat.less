@@ -1,0 +1,152 @@
+* {
+  margin : 0;
+  padding: 0;
+}
+
+p,
+span {
+  color      : rgba(0, 0, 0, 0.65);
+  font-weight: 500 !important;
+}
+
+.free-layout-wrapper {
+
+  display    : flex;
+  height     : 100vh;
+  overflow   : hidden;
+  @switchTime: pageSwitch 0.3s linear;
+
+  .free-switch {
+    height: 100%;
+
+    animation     : @switchTime;
+    -moz-animation: @switchTime;
+    /* Firefox */
+    -webkit-animation: @switchTime;
+    /* Safari and Chrome */
+    -o-animation: @switchTime;
+    /* Opera */
+  }
+
+
+  @keyframes pageSwitch {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @mainHeight: 100%;
+  @mainWidth : 66px;
+
+  .free-layout-main {
+    min-width : @mainWidth;
+    height    : @mainHeight;
+    position  : relative;
+    background: #fff;
+  }
+
+  .free-layout-chat {
+    height : @mainHeight;
+    display: flex;
+    width:calc(100% - @mainWidth);
+    flex: 1;
+
+    .free-chat-left {
+      height          : @mainHeight;
+      background-color: #FBFBFB;
+      flex            : 0 1 20%;
+
+      max-width: 20%;
+      overflow : hidden;
+
+    }
+
+    .free-chat-right {
+      height          : @mainHeight;
+      background-color: #F8F8F8;
+      flex            : 0 1 80%;
+      display         : flex;
+      flex-direction  : column;
+
+    }
+  }
+
+  // // 启用硬件加速
+  // -webkit-transform: translate3d(0, 0, 0);
+  // -moz-transform   : translate3d(0, 0, 0);
+  // -ms-transform    : translate3d(0, 0, 0);
+  // transform        : translate3d(0, 0, 0);
+}
+
+::selection {
+  color     : #fff;
+  background: rgb(94, 150, 252) !important;
+}
+
+.free-Info-content-info,
+.bubble-li {
+  // 禁止文字被选中
+  /*火狐*/
+  -moz-user-select: none;
+  /*webkit浏览器*/
+  -webkit-user-select: none;
+  /*IE10*/
+  -ms-user-select: none;
+  /*早期浏览器*/
+  -khtml-user-select: none;
+  user-select       : none;
+
+  // 移动端 禁止文字被选中
+  -webkit-touch-callout: none;
+}
+
+
+// 滚动条
+/* 设置滚动条的样式 */
+::-webkit-scrollbar {
+  width           : 3px;
+  background-color: rgb(251, 251, 251);
+}
+
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+  border-radius: 3px;
+}
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background   : #5e95fcb6;
+
+}
+
+.wrap {
+  scrollbar-arrow-color: #A1A1A1;
+  /**/
+  /*三角箭头的颜色*/
+  scrollbar-face-color: #5e95fcb6;
+  /**/
+  /*立体滚动条的颜色*/
+  scrollbar-3dlight-color: transparent;
+  /**/
+  /*立体滚动条亮边的颜色*/
+  scrollbar-highlight-color: transparent;
+  /**/
+  /*滚动条空白部分的颜色*/
+  scrollbar-shadow-color: transparent;
+  /**/
+  /*立体滚动条阴影的颜色*/
+  scrollbar-darkshadow-color: transparent;
+  /**/
+  /*立体滚动条强阴影的颜色*/
+  scrollbar-track-color: #F9F9F9;
+  /**/
+  /*立体滚动条背景颜色*/
+  scrollbar-base-color: transparent;
+  /**/
+  /*滚动条的基本颜色*/
+}

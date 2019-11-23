@@ -1,0 +1,292 @@
+.login {
+  // background        : #F6F8FB;
+  background-image     : linear-gradient(270deg, #f6f8fb, #a7ddff3d);
+  width                : 100%;
+  height               : 100%;
+  // display           : flex;
+  // align-items       : center;
+  // justify-content   : center;
+  // flex-direction    : column;
+
+  //----------------------
+  .bubble-bgwall {
+    overflow       : hidden;
+    position       : relative;
+    margin         : 0 auto;
+    width          : 100%;
+    height         : 100%;
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    flex-direction : column;
+
+    .bubble-li {
+      display         : flex;
+      position        : absolute;
+      bottom          : -200px;
+      justify-content : center;
+      align-items     : center;
+      border-radius   : 10px;
+      width           : 50px;
+      height          : 50px;
+      background-color: rgba(#fff, 0.15);
+      color           : rgba(0, 128, 255, 0.3);
+      font-size       : 16px;
+      animation       : bubble 15s infinite;
+
+      &:nth-child(1) {
+        left: 10%;
+      }
+
+      &:nth-child(2) {
+        left              : 20%;
+        width             : 90px;
+        height            : 90px;
+        animation-duration: 7s;
+        animation-delay   : 2s;
+      }
+
+      &:nth-child(3) {
+        left           : 25%;
+        animation-delay: 4s;
+      }
+
+      &:nth-child(4) {
+        left              : 40%;
+        width             : 60px;
+        height            : 60px;
+        background-color  : rgba(#fff, 0.3);
+        animation-duration: 8s;
+      }
+
+      &:nth-child(5) {
+        left: 70%;
+      }
+
+      &:nth-child(6) {
+        left            : 80%;
+        width           : 120px;
+        height          : 120px;
+        background-color: rgba(#fff, 0.2);
+        animation-delay : 3s;
+      }
+
+      &:nth-child(7) {
+        left           : 32%;
+        width          : 160px;
+        height         : 160px;
+        animation-delay: 2s;
+      }
+
+      &:nth-child(8) {
+        left              : 55%;
+        width             : 40px;
+        height            : 40px;
+        font-size         : 12px;
+        animation-duration: 15s;
+        animation-delay   : 4s;
+      }
+
+      &:nth-child(9) {
+        left              : 25%;
+        width             : 40px;
+        height            : 40px;
+        background-color  : rgba(#fff, 0.3);
+        font-size         : 12px;
+        animation-duration: 12s;
+        animation-delay   : 2s;
+      }
+
+      &:nth-child(10) {
+        left           : 85%;
+        width          : 160px;
+        height         : 160px;
+        animation-delay: 5s;
+      }
+    }
+  }
+
+  @keyframes bubble {
+    0% {
+      opacity  : 0.5;
+      transform: translateY(0) rotate(45deg);
+    }
+
+    25% {
+      opacity  : 0.75;
+      transform: translateY(-400px) rotate(90deg);
+    }
+
+    50% {
+      opacity  : 1;
+      transform: translateY(-600px) rotate(135deg);
+    }
+
+    100% {
+      opacity  : 0;
+      transform: translateY(-1000px) rotate(180deg);
+    }
+  }
+}
+
+//-----------------------------
+
+.loginBox {
+  // float             : left;
+  // transform         : translate(0,-100%);
+  -webkit-border-radius: 8px 8px 8px 8px;
+  border-radius        : 8px 8px 8px 8px;
+  background           : #fff;
+  height               : 400px;
+  width                : 360px;
+  -webkit-box-shadow   : 0 12px 25px 0 rgba(0, 128, 255, 0.08);
+  box-shadow           : 0 12px 25px 0 rgba(0, 128, 255, 0.08);
+  position             : relative;
+  padding              : 10px 0 20px;
+}
+
+.free-form {
+  display : block;
+  position: relative;
+  width   : 100%;
+  margin  : 100px 0 0 0;
+}
+
+.free-button,
+.free-input,
+.free-input-label {
+  transition        : all 0.3s cubic-bezier(0.26, 0.53, 0.13, 1);
+  -moz-transition   : all 0.3s cubic-bezier(0.26, 0.53, 0.13, 1);
+  -webkit-transition: all 0.3s cubic-bezier(0.26, 0.53, 0.13, 1);
+  -o-transition     : all 0.3s cubic-bezier(0.26, 0.53, 0.13, 1);
+  width             : 75%;
+  font-size         : 16px;
+}
+
+/* 按钮 */
+.free-button {
+  margin          : 0 auto;
+  background-image: linear-gradient(to bottom right, #94c9ff, #0080ff);
+  border          : none;
+
+  height       : 36px;
+  border-radius: 25px 25px 25px 25px;
+  outline      : none;
+
+  color          : white;
+  text-align     : center;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  &:hover {
+    -webkit-box-shadow: 0 0 16px 0 rgba(0, 112, 255, 0.6);
+    box-shadow        : 0 0 16px 0 rgba(0, 112, 255, 0.6);
+  }
+}
+
+/* 输入框 */
+.free-input {
+  position     : relative;
+  display      : inline-block;
+
+  padding: 7px 0;
+  margin : 0 auto;
+  border       : 0;
+  border-bottom: 1.2px solid rgb(223, 223, 223);
+
+  caret-color: rgba(0, 112, 255, 0.6);
+  background-color: #fff;
+  background-image: none;
+
+  &:-webkit-autofill {
+    border            : 0 !important;
+    border-bottom     : 1.5px solid rgb(70, 170, 253);
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    box-shadow        : 0 0 0px 1000px white inset;
+  }
+
+  /* placeholder-shown伪类，当placaholder有值时显示时的效果，当有文字输入到文本框时，效果消失 */
+  &:placeholder-shown {
+    text-overflow: ellipsis;
+  }
+
+  &::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    color: rgb(193, 193, 193);
+  }
+
+  &:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: rgb(193, 193, 193);
+  }
+
+  &::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: rgb(193, 193, 193);
+  }
+
+  &:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: rgb(193, 193, 193);
+  }
+
+  &:not(:placeholder-shown),
+  &:not(:placeholder-shown) {
+    border-bottom: 1.5px solid rgb(70, 170, 253);
+  }
+}
+
+// z-index: 2;
+.free-input:focus {
+  outline: 0;
+  /*选中input时，默认有边框，outlin为了去掉边框*/
+  background   : #fff;
+  border-bottom: 1.5px solid rgb(70, 170, 253);
+}
+
+.free-input,
+.free-button {
+  display: block;
+}
+
+/* free-input-label */
+.free-input-label {
+  display   : block;
+  padding   : 7px 0;
+  margin    : 0 auto;
+  width     : 75%;
+
+  visibility: hidden;
+  text-align: left;
+  color     : rgb(193, 193, 193);
+  transform : translate(0, -100%);
+
+}
+
+.free-input:placeholder-shown+.free-input-label {
+  /* 当placeholder可见时,隐藏label */
+  z-index: -1;
+}
+
+/* 当placeholder消失后,label元素可见,并做相应的动画 */
+.free-input:not(:placeholder-shown)+.free-input-label,
+.free-input:focus:not(:placeholder-shown)+.free-input-label {
+  /* opacity: 1; */
+  visibility: visible;
+  transform : translate(0, -175%);
+}
+
+/* superluckybo图表 */
+.SuperLuckyBo {
+  position : absolute;
+  top      : -39px;
+  left     : 50%;
+  margin   : 0 auto;
+  transform: translateX(-50%);
+
+  img {
+    width : 360px;
+    height: 78px;
+  }
+}
