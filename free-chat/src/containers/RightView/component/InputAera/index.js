@@ -34,7 +34,13 @@ export function InputAera({ sendClick, videoApply }) {
         <textarea
           value={value}
           onChange={valueChange}
+          
         />
+        {/* <div
+         
+          contentEditable="true"
+        >
+        </div> */}
         <footer className="input-aera-footer">
           <div className="send-button" onClick={sendMsg} >Send</div>
         </footer>

@@ -15,11 +15,13 @@ import {
 } from '../../ajax/socket'
 import Vedio from './video.js'
 import './index.less'
+
 const scrollToBottom = () => {
-  //const scroll = document.getElementById('chatInfoList')
+  // const scroll = document.getElementById('chatInfoList')
   // scroll.scrollTop = scroll.scrollHeight;
-  document.getElementById('chat-bottom').scrollIntoView({ block: "end", behavior: "smooth" })
   // document.getElementById('chat-bottom').scrollIntoView({ block: "end", behavior: "instant" })
+
+  document.getElementById('chat-bottom').scrollIntoView({ block: "end", behavior: "smooth" })
 }
 
 function PrivateChat({ myId, privateMsgs, nowChatId, addPrivateMsgs, updateUserInfoLists }) {
@@ -51,6 +53,7 @@ function PrivateChat({ myId, privateMsgs, nowChatId, addPrivateMsgs, updateUserI
     },
     [nowChatId, myId],
   )
+
   const getUserMsg = useMemo(() => {
     let MsgInfo = privateMsgs[nowChatId]
     let res = []
@@ -67,11 +70,12 @@ function PrivateChat({ myId, privateMsgs, nowChatId, addPrivateMsgs, updateUserI
     setTimeout(() => { scrollToBottom() }, 0)
     return res
   }, [nowChatId, privateMsgs, myId])
+  
   return (
     <div className="free-chat-right" >
-      <div className="chat-info-list" id='chatInfoList' style={{ "overflow": "auto" }}  >
+      <div className="chat-info-list" id="chatInfoList" style={{ 'overflow': 'auto' }}  >
         {nowChatId && getUserMsg}
-        <div className='chat-bottom-line' id='chat-bottom'><span> ——————  我也是有底线的 —————— </span></div>
+        <div className="chat-bottom-line" id="chat-bottom"><span> ——————  我也是有底线的 —————— </span></div>
       </div>
       <InputAera
         sendClick={sendClick}
@@ -90,7 +94,8 @@ PrivateChat.propTypes = {
   privateMsgs: PropTypes.object,
   nowChatId: PropTypes.string,
   myId: PropTypes.number,
-  addPrivateMsgs: PropTypes.func
+  addPrivateMsgs: PropTypes.func,
+  updateUserInfoLists: PropTypes.func,
 }
 
 PrivateChat.defaultProps = {

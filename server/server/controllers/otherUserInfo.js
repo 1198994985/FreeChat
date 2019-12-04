@@ -1,10 +1,11 @@
 const userInfo = require('../models/userInfo.js')
-const { authVerify } = require('../middlewares/verify.js')
+
+
 // 根据token获取用户信息，但不包括密码,ctx.header.authorization获取header中的token
 exports.otherUserInfoControllers = async (ctx) => {
   const res = await userInfo.findDataByAccount(ctx.params.account)
   // TODO:判断自己account与要搜索的account是否相同
-  if (res.length!=0) {
+  if (res.length) {
     console.log('搜索好友', res);
     ctx.body = {
       success: true,

@@ -7,6 +7,7 @@ const { otherUserInfoControllers } = require('../controllers/otherUserInfo.js');
 const { jwtSecret } = require('../config.js')
 
 const jwt = require('koa-jwt')({ secret: jwtSecret });
+
 const routers = router
   .post('/login', loginController) // 登陆
   .post('/register', registerController) // 注册
