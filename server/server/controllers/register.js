@@ -10,7 +10,6 @@ exports.registerController = async (ctx, next) => {
       message: `用户名 ${account} 已存在`
     }
   } else {
-
     try {
       userInfo.insertUser(account, md5(password));
       ctx.body = {

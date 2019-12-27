@@ -47,7 +47,7 @@ exports.cors = async (ctx, next) => {
 
 
 
-//const cors = require('koa2-cors')
+// const cors = require('koa2-cors')
 // app.use(cors({
 //   origin:(ctx)=>{
 //       return ctx.header.origin;

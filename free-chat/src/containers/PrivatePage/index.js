@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useCallback, useMemo } from 'react';
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types';
-
 import {
   InputAera
 } from '../RightView/component'
