@@ -121,7 +121,6 @@ const Vedio = memo(({ myId,visible, toId, isVideoVisible }) => {
           break;
         case '3': // 正在通话中
           console.log('对方正在通话中！')
-
           break;
       }
     });

@@ -19,29 +19,36 @@ exports.markInfoControllers = async ctx => {
     console.log("无评论", res);
     ctx.body = {
       success: false,
-      message: "无评论"
+      data: "无评论"
     };
   }
 };
 // 根据token获取用户信息，但不包括密码,ctx.header.authorization获取header中的token
 exports.insertMarkControllers = async ctx => {
   let res;
+  let markTime = time();
   const { theId, from_id, msg, type = 0 } = ctx.request.body;
    console.log("res", theId, from_id, msg, type);
   if (theId && from_id) {
-    res = await markInfo.insertMark(theId, from_id,msg, time(), type);
-     console.log("res", theId, from_id, msg, type);
+    res = await markInfo.insertMark(theId, from_id, msg, markTime, type);
+     console.log("res", res);
   }
  
   if (res) {
     ctx.body = {
       success: true,
-      data: res
+      data: {
+        theId,
+        from_id,
+        msg,
+        time: markTime,
+        type
+      }
     };
   } else {
     ctx.body = {
       success: false,
-      message: ""
+      data: ""
     };
   }
 };

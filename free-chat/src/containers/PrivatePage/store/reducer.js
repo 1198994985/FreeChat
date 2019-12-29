@@ -8,7 +8,7 @@ const defaultState = {
 }
 
 const addPrivateMsgs = (state, data) => {
-  const { from_user, to_user, message, time } = data
+  const { from_user, to_user, message, time,type } = data
   let OneUserMsgs
   console.log('redux ', data, state.userId )
   if (from_user == state.userId) {
@@ -17,8 +17,20 @@ const addPrivateMsgs = (state, data) => {
     OneUserMsgs = state.privateMsgs[from_user]
   }
 
-  console.log('action.data', OneUserMsgs,{ id: OneUserMsgs[0].id + 1, from_user, message, time })
-  OneUserMsgs.unshift({ id: OneUserMsgs[0].id + 1, from_user, message, time })
+  console.log("action.data", OneUserMsgs, {
+    id: OneUserMsgs[0].id + 1,
+    from_user,
+    message,
+    time,
+    type
+  });
+  OneUserMsgs.unshift({
+    id: OneUserMsgs[0].id + 1,
+    from_user,
+    message,
+    time,
+    type
+  });
   return { ...state, privateMsgs: { ...state['privateMsgs'] } }
 
 }

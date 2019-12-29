@@ -1,8 +1,35 @@
-import React from 'react';
-import './index.less'
-import { Avatar } from 'antd';
-
-export function ChatItem({ myself, img, name, time, msg, clickImg, clickAvatar }) {
+import React from "react";
+import "./index.less";
+import { Avatar } from "antd";
+// type == 1代表图片
+export function ChatItem({
+  myself,
+  img,
+  name,
+  time,
+  msg,
+  clickImg,
+  clickAvatar,
+  type = 1
+}) {
+  const handleMsg = () => {
+    if ([2,'2'].includes(type)) {
+      return (
+        <p>
+          <img style={{width:100,height:100}} src={msg} alt="" />
+        </p>
+      );
+    } else if ([3, '3'].includes(type)) {
+      
+      return (<p>
+         <audio controls={true} className="player">
+          <source src={msg} type="audio/mpeg" />
+        </audio>
+        </p>)
+    
+    }
+    else return <p>{msg}</p>;
+  };
   return (
     <div className="chat-item">
       {
@@ -12,17 +39,13 @@ export function ChatItem({ myself, img, name, time, msg, clickImg, clickAvatar }
           </div>
           <div className="chat-info">
             <div className="chat-name">{name && <span> {name} </span>} </div>
-            <div className="chat-msg">
-              {<p>{msg}</p>}
-            </div>
+            <div className="chat-msg">{handleMsg()}</div>
           </div>
         </div>
       }
     </div>
-  )
+  );
 }
-
-
 
 // ChatItem.PropTypes = {
 //   myself: PropTypes.bool,
@@ -43,11 +66,3 @@ export function ChatItem({ myself, img, name, time, msg, clickImg, clickAvatar }
 //   clickAvatar: undefined,
 //   clickImg() { },
 // }
-
-
-
-
-
-
-
-

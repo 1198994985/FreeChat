@@ -19,4 +19,5 @@ const store = createStore(
     applyMiddleware(thunkMiddleware)
   )
 );
+
 export default store

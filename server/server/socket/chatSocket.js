@@ -98,7 +98,7 @@ const chatSocket = server => {
         io.to(socketId).emit("error", { code: 500, message: error.message });
       }
     });
-    sokcet.on("initGroupChat", async (user_id, fn) => {
+    socket.on("initGroupChat", async (user_id, fn) => {
       try {
         const groupList = await UserInfo.getGroupList(user_id);
         groupList.forEach(item => {

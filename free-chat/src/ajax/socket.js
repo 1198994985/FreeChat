@@ -52,5 +52,5 @@ export const p2pApply = (otherId, ownId) => socketEmit('apply', { account: other
  * @param {string | number} otherId 对方id
  * @param {string | number} ownId 自己的id
  */
-export const sendPrivateMsg = (inputMsg,otherId,ownId)=>socketEmitAndGetResponse('sendPrivateMsg', { message: inputMsg, to_user: otherId, from_user: ownId })
+export const sendPrivateMsg = (inputMsg,otherId,ownId,type = 1)=>socketEmitAndGetResponse('sendPrivateMsg', { message: inputMsg, to_user: otherId, from_user: ownId,type:type })
 

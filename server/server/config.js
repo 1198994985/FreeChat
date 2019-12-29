@@ -4,4 +4,5 @@ exports.dataBaseConfig = {
   password: 'fb269948985',
   database:'bobzuishuai',
 }
-exports.jwtSecret='bobozuishuai'
+exports.jwtSecret = 'bobozuishuai'
+
