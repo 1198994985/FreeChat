@@ -9,10 +9,8 @@ const { jwtSecret } = require('../config.js')
 exports.authVerify = (token) => {
   try {
     const payload = JWT.verify(token.split(' ')[1], jwtSecret)
-    console.log('payload', payload);
     return payload;
   } catch (err) {
-    console.error(err);
     return false;
   }
 }

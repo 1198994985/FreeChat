@@ -28,12 +28,9 @@ exports.insertMarkControllers = async ctx => {
   let res;
   let markTime = time();
   const { theId, from_id, msg, type = 0 } = ctx.request.body;
-   console.log("res", theId, from_id, msg, type);
   if (theId && from_id) {
     res = await markInfo.insertMark(theId, from_id, msg, markTime, type);
-     console.log("res", res);
   }
- 
   if (res) {
     ctx.body = {
       success: true,

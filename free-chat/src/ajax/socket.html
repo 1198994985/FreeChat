@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/socket.io-client@2/dist/socket.io.js"></script>
+  </head>
+  <body></body>
+
+  <script>
+    window.socketTest = io(`ws://localhost:8090/`);
+    console.log("socketTest");
+    const socketEmit = (emitName, data) => {
+      console.log("发送消息", data);
+      try {
+        window.socketTest.emit(emitName, data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    const socketEmitAndGetResponse = (emitName, data, onError) => {
+      return new Promise((resolve, reject) => {
+        try {
+          window.socketTest.emit(emitName, data, response => {
+            resolve(response);
+          });
+        } catch (error) {
+          if (onError) {
+            onError(error);
+          }
+          reject(error);
+        }
+      });
+    };
+    window.socketTest.on("connect", function(socket) {
+      console.log("成功连接服务器");
+    });
+    socketEmit("test", "测试");
+  </script>
+</html>
