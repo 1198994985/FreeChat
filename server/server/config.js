@@ -1,8 +1,8 @@
 exports.dataBaseConfig = {
-  host: '47.100.13.49',
+  host: '*******',
   user: 'root',
-  password: 'fb269948985',
-  database:'bobzuishuai',
+  password: '*****',
+  database:'******',
 }
 exports.jwtSecret = 'bobozuishuai'
 
